@@ -8,13 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/produtos")
+@RequestMapping({"/" , "/produtos"})
 public class ProdutoController {
 
     @Autowired
     private ProdutoService produtoService;
 
-    @GetMapping
+        @GetMapping
     public String listarProdutos(Model model) {
         model.addAttribute("produtos", produtoService.listarTodos());
         return "produto/lista";
